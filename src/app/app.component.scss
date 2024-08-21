@@ -1,0 +1,42 @@
+/* .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  header, footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+  }
+   */
+   /* styles.scss */
+
+/* Ensure the whole viewport is used */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling on the main window */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .content {
+    flex: 1 1 auto; /* Allow the content area to grow and take up available space */
+    overflow: auto; /* Add vertical scrolling to the content */
+    padding: 20px;
+
+    /* Additional styling for the center content */
+  }
+  
