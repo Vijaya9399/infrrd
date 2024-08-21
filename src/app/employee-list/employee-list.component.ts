@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
+  employeesList: Employee[] = [];
   searchQuery: string = '';
 
   constructor(private employeeService: EmployeeService, private router: Router) { }
@@ -38,6 +39,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   filter() {
-    this.employees = this.employeeService.filterEmployees(this.searchQuery);
+    this.employeesList = this.employeeService.filterEmployees(this.searchQuery);
   }
 }
