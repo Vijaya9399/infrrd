@@ -32,13 +32,12 @@ export class EmployeeFormComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       contact: [''],
       designation: ['', Validators.required],
-      avatar: ['', Validators.required]
+      avatar: ['']
     });
     const id = +this.route.snapshot.paramMap.get('id')!;
     if (id) {
       const emp = this.employeeService.getEmployee(id);
       if (emp) {
-       // this.employee = emp;
         this.isEditMode = true;
         this.employeeForm.setValue({
           id:emp.id,

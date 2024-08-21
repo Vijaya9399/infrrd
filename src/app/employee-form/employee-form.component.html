@@ -3,9 +3,10 @@
       <!-- Name Input -->
       <div class="form-group">
         <label for="name">Name</label>
+        <span class="required">*</span>
         <input id="name" formControlName="name" type="text">
         <div class="error-message" *ngIf="employeeForm.get('name')?.invalid && employeeForm.get('name')?.touched">
-          Name is required.
+         Please enter name.
         </div>
       </div>
   
@@ -18,9 +19,10 @@
       <!-- Email Input -->
       <div class="form-group">
         <label for="email">Email</label>
+        <span class="required">*</span>
         <input id="email" formControlName="email" type="email">
         <div class="error-message" *ngIf="employeeForm.get('email')?.invalid  && employeeForm.get('email')?.touched">
-          Valid email is required.
+         Please enter valid email.
         </div>
       </div>
   
@@ -33,6 +35,7 @@
       <!-- Designation Select -->
       <div class="form-group">
         <label for="designation">Designation</label>
+        <span class="required">*</span>
         <select id="designation" formControlName="designation">
           <option value="Software Developer">Software Developer</option>
           <option value="Senior Software Developer">Senior Software Developer</option>
@@ -40,6 +43,9 @@
           <option value="Technical Lead">Technical Lead</option>
           <option value="Manager">Manager</option>
         </select>
+        <div class="error-message" *ngIf="employeeForm.get('designation')?.invalid  && employeeForm.get('designation')?.touched">
+          Please select the designation.
+        </div>
       </div>
   
       <!-- Avatar Selection -->

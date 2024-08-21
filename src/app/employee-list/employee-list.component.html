@@ -31,6 +31,7 @@
         <th>Actions</th>
       </tr>
     </thead>
+    
     <tbody>
       <tr *ngFor="let employee of employees">
         <td>{{ employee.name }}</td>
@@ -40,8 +41,8 @@
         <td>{{ employee.designation }}</td>
         <td><img [src]="employee.avatar" alt="Avatar" class="avatar-img"></td>
         <td>
-          <button class="button button-primary button-sm" (click)="deleteEmployee(employee.id)">Delete</button>
-          <button class="button button-primary button-sm"
+          <button class="button button-primary button-sm margin-right-8" (click)="deleteEmployee(employee.id)">Delete</button>
+          <button class="button button-primary button-sm margin-right-8"
             [routerLink]="['/employee', employee.id, 'edit']">Edit</button>
           <button class="button button-primary button-sm"
             [routerLink]="['/employee', employee.id, 'view']">View</button>
@@ -49,4 +50,9 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="employees.length==0" class="empty-list-banner">
+    <b>
+      Please add a new employee to get started or adjust your filter criteria.
+    </b>
+  </div>
 </div>

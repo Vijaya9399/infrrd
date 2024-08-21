@@ -97,3 +97,14 @@
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
   }
 }
+/* employee-list.component.scss */
+.empty-list-banner {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: center;
+}
