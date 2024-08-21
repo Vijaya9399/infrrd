@@ -55,7 +55,6 @@ export class EmployeeFormComponent implements OnInit {
   onSubmit(): void {
     if (this.employeeForm.valid) {
       const employeeData = this.employeeForm.value;
-      console.log('Employee Data:', employeeData);
       if (this.isEditMode) {
         this.employeeService.editEmployee(employeeData.id, employeeData);
       } else {

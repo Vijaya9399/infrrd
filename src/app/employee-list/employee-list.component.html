@@ -1,17 +1,12 @@
 <div>
   <div class="search-filter">
-    <!--   <div class="search-inputs">
-      <input type="text" [(ngModel)]="searchQuery" placeholder="Search by Name or Email">
-      <button class="button button-primary margin-right-8" (click)="search()">Search</button>
-      <button class="button button-primary" (click)="filter()">Filter</button>
-    </div> -->
     <div class="search-filter">
       <div class="search-container">
         <input type="text" class="search-input" [(ngModel)]="searchQuery" placeholder="Search by Name or Email" />
         <button *ngIf="searchQuery" class="clear-button" (click)="clear()">×</button>
       </div>
-        <button class="button button-primary margin-right-8" (click)="search()">Search</button>
-        <button class="button button-primary" (click)="filter()">Filter</button>
+      <button class="button button-primary margin-right-8" (click)="search()">Search</button>
+      <button class="button button-primary" (click)="filter()">Filter</button>
     </div>
     <div>
       <button class="button button-primary" (click)="navigateToAddEmployee()">Add Employee</button>
@@ -31,7 +26,7 @@
         <th>Actions</th>
       </tr>
     </thead>
-    
+
     <tbody>
       <tr *ngFor="let employee of employees">
         <td>{{ employee.name }}</td>
@@ -41,7 +36,8 @@
         <td>{{ employee.designation }}</td>
         <td><img [src]="employee.avatar" alt="Avatar" class="avatar-img"></td>
         <td>
-          <button class="button button-primary button-sm margin-right-8" (click)="deleteEmployee(employee.id)">Delete</button>
+          <button class="button button-primary button-sm margin-right-8"
+            (click)="deleteEmployee(employee.id)">Delete</button>
           <button class="button button-primary button-sm margin-right-8"
             [routerLink]="['/employee', employee.id, 'edit']">Edit</button>
           <button class="button button-primary button-sm"
