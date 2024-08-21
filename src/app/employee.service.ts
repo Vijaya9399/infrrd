@@ -48,7 +48,7 @@ export class EmployeeService {
   searchEmployees(query: string): Employee[] {
     if (query.trim()) {
       return this.employees.filter(emp =>
-        emp.name == query || emp.email == query
+        emp.name.trim() == query || emp.email.trim() == query
       );
     }
     else {
@@ -58,6 +58,7 @@ export class EmployeeService {
   }
 
   filterEmployees(query: string): Employee[] {
+    query = query.trim();
     return this.employees.filter(emp =>
       emp.name.includes(query) || emp.email.includes(query)
     );

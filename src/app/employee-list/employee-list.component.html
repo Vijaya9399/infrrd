@@ -46,9 +46,14 @@
       </tr>
     </tbody>
   </table>
-  <div *ngIf="employees.length==0" class="empty-list-banner">
+  <div *ngIf="employees.length==0 && !searchQuery" class="empty-list-banner">
     <b>
-      Please add a new employee to get started or adjust your filter criteria.
+      Please add a new employee to get started. 
+    </b>
+  </div>
+  <div *ngIf="employees.length==0 && searchQuery" class="empty-list-banner">
+    <b>
+      No result found. Please adjust your filter criteria.
     </b>
   </div>
 </div>
